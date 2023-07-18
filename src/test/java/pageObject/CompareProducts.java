@@ -80,5 +80,8 @@ public class CompareProducts {
         js.executeScript("arguments[0].scrollIntoView();",LinkOnConfirmMessage);
         BaseTest.driver.findElement(By.linkText("comparison list")).click();
     }
+    public static  void compareProducts(){
+        BaseTest.driver.findElement(By.xpath("(//div[@class='page-wrapper'])[1]"));
+    }
 }
 

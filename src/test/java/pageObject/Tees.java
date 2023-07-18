@@ -29,14 +29,20 @@ public class Tees {
         actions.moveToElement(element).perform();
         Thread.sleep(2500);
 //        hover on tops
+
+        Reporting.ExtentReport.test.info("Value entered", MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot("tees")).build());
+//       click tees
+
+    }
+    public static  void hoverOnTops() throws InterruptedException {
         WebElement tops = BaseTest.driver.findElement(By.xpath("(//span[contains(text(),'Tops')])[2]"));
         actions.moveToElement(tops).build().perform();
         Thread.sleep(2500);
-        Reporting.ExtentReport.test.info("Value entered", MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot("tees")).build());
-//       click tees
-        BaseTest.driver.findElement(By.xpath("(//span[contains(text(),'Tees')])[2]")).click();
-
     }
+    public static  void clicksTee(){
+        BaseTest.driver.findElement(By.xpath("(//span[contains(text(),'Tees')])[2]")).click();
+    }
+
 
     public static void selectThreeStarsTee() throws IOException {
         Reporting.ExtentReport.test.info("user looks for a 3 starts item to add to cart");

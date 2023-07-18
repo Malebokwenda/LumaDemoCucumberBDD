@@ -12,11 +12,14 @@ import static Reporting.ExtentReport.getScreenshot;
 import static Reporting.ExtentReport.test;
 
 public class Login {
-    WebDriver driver = BaseTest.driver;
+//    WebDriver driver = BaseTest.driver;
+    public static void SignInButton(){
+        BaseTest.driver.findElement(By.xpath("(//a[contains(text(),'Sign In')])[1]")).click();
+
+    }
     public static void LogIn(String Email, String password) throws IOException {
 
         test.info("User entered correct credentials");
-        BaseTest.driver.findElement(By.xpath("(//a[contains(text(),'Sign In')])[1]")).click();
 
         WebElement emailInput = BaseTest.driver.findElement(By.id("email"));
         emailInput.sendKeys(Email);
@@ -25,8 +28,11 @@ public class Login {
         passwordInput.sendKeys(password);
         test.info("Value entered", MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot("Sign In")).build());
 
-        BaseTest.driver.findElement(By.xpath("(//span[contains(text(),'Sign In')])[1]")).click();
 
+
+    }
+    public static void clickLoginButton(){
+        BaseTest.driver.findElement(By.xpath("(//span[contains(text(),'Sign In')])[1]")).click();
 
     }
 

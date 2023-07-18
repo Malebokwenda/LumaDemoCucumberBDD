@@ -14,6 +14,7 @@ import org.testng.annotations.*;
 import java.io.IOException;
 
 public class BaseTest {
+
     public static WebDriver driver;
     private ExcelReader excelData;
 
@@ -47,6 +48,8 @@ public class BaseTest {
             options.addArguments("--remote-allow-origins=*");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
+            driver.manage().window().maximize();
+
 
         } else if (browser.equalsIgnoreCase("edge")) {
             WebDriverManager.edgedriver().setup();

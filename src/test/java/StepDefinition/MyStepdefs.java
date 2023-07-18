@@ -8,9 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import utilities.BaseTest;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class MyStepdefs extends BaseTest {
@@ -54,5 +56,11 @@ public class MyStepdefs extends BaseTest {
     @AfterSuite
     public void teardown(){
         driver.quit();
+    }
+
+    @BeforeClass
+    @Override
+    public void setUp(String browser, String url) throws IOException {
+        super.setUp(browser, url);
     }
 }

@@ -2,12 +2,11 @@ Feature: Tees
 
   Scenario: Verify error message when size and color are not selected
     Given user is on Home page
-    When user navigate to "Men" category
-    And user select "Tops" subcategory
-    And user choose "Tees" subcategory
-    And user add a 3 stars product to the cart without selecting size and color
-    Then user should see the error message "You need to choose options for your item."
-
+    When user navigate to Men category
+    And user select Tops subcategory
+    And user choose Tees subcategory
+    And user add a three stars product to the cart without selecting size and color
+    Then user should see the error message
 
   Scenario: Add Orange Miko Pullover Hoodie to Cart and Complete Order
     Given  user is on Home page
