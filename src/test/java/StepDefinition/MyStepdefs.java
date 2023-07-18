@@ -9,23 +9,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import utilities.BaseTest;
 
 import java.util.concurrent.TimeUnit;
 
-public class MyStepdefs {
+public class MyStepdefs extends BaseTest {
     WebDriver driver = null;
 
-    @BeforeSuite
+
     @Given("browser is open")
     public void browser_is_open() {
         System.out.println("Inside Step - browser is open");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(5,TimeUnit.SECONDS);
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--remote-allow-origins=*");
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver(options);
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//        driver.manage().timeouts().pageLoadTimeout(5,TimeUnit.SECONDS);
     }
 
     @Given("user is on the google search page")
