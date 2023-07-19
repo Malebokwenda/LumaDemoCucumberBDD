@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="testing">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="https://magento.softwaretestingboard.com"/>
+        <classes>
+            <class name="objectRepo.TestRunner" />
+        </classes>
+    </test>
+</suite>
